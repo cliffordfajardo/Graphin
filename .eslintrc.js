@@ -1,5 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  ignorePatterns: ['**/node_modules/**', '**/dist/**'],
   extends: [
     'airbnb',
     'plugin:@typescript-eslint/recommended',
@@ -7,6 +8,10 @@ module.exports = {
     'prettier/react',
     'prettier/@typescript-eslint',
   ],
+  env: {
+    jest: true,
+    browser: true,
+  },
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
@@ -14,6 +19,7 @@ module.exports = {
       jsx: true, // Allows for the parsing of JSX
     },
   },
+  plugins: ['import', '@typescript-eslint', 'prettier', 'react'],
   rules: {
     'no-shadow': 0,
     'react/button-has-type': 0,

@@ -1,9 +1,13 @@
 {
   "name": "graphin",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": [
+      "**/jest/**",
+      "**/jest"
+    ]
+  },
   "scripts": {
     "graphin": "cd packages/graphin && npm run start ",
     "components": "cd packages/graphin-components && npm run start",
@@ -33,7 +37,7 @@
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.4.1",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "@types/styled-components": "^5.1.7",
@@ -51,19 +55,19 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "generate-changelog": "^1.8.0",
     "gh-pages": "^3.1.0",
     "husky": "^4.2.5",
     "lerna": "^3.22.1",
     "lint-staged": "^10.2.2",
-    "mini-css-extract-plugin": "^2.4.5",
-    "prettier": "^2.2.1",
+    "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "^2.5.1",
     "react-color": "^2.19.3",
     "react-pie-menu": "^0.3.0",
     "styled-components": "^5.2.1",
-    "typescript": "^4.5.3",
+    "typescript": "^4.6.2",
     "webpack-bundle-analyzer": "^4.5.0"
   },
   "husky": {
@@ -98,5 +102,12 @@
   "resolutions": {
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0"
+  },
+  "volta": {
+    "node": "16.7.0",
+    "yarn": "1.22.17"
+  },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   }
 }

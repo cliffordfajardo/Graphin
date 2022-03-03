@@ -1,4 +1,3 @@
-import '@types/jest';
 import mock from '../mock';
 
 describe('Mock Util', () => {

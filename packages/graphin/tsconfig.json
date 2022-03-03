@@ -9,11 +9,12 @@
     "resolveJsonModule": true,
     "jsx": "react",
     "strict": true,
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types/", "./typings/index.d.ts"],
     "skipLibCheck": true,
-    "isolatedModules": false
+    "baseUrl": "./src/"
   },
-  "include": ["src"]
+  "include": ["src"],
+   "exclude": ["node_modules", "**/node_modules/*", "dist"]
 }
