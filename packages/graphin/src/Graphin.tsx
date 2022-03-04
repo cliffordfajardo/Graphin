@@ -484,7 +484,7 @@ class Graphin extends React.PureComponent<GraphinProps, GraphinState> {
 
     return (
       <GraphinContext.Provider value={this.state.context}>
-        <div id="graphin-container">
+        <div data-testid="graphin-container" id="graphin-container">
           <div
             data-testid="custom-element"
             className="graphin-core"

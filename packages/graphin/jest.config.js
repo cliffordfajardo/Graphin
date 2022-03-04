@@ -12,8 +12,8 @@ module.exports = {
   },
   testRegex: '.*\\.test.(ts|tsx)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  setupFiles: ['jest-canvas-mock'],
   testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': '<rootDir>/__mock__/styleMock.ts',
     '^(\\.{1,2}/.*)\\.js$': '$1',

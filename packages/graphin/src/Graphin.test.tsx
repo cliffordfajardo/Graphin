@@ -3,10 +3,17 @@ import { render, screen } from '@testing-library/react';
 import Graphin from './Graphin';
 import { Utils } from '.';
 
-test('renders learn react link', () => {
-  const graphData = Utils.mock(5).circle().graphin();
-  render(<Graphin data={graphData} />);
-  //   const linkElement = screen.getByText(/learn react/i);
-  //   expect(linkElement).toBeInTheDocument();
-  expect(1).toBe(1);
+describe('Graphin', () => {
+  test('renders <Graphin> component into the DOM', () => {
+    const graphData = Utils.mock(5).circle().graphin();
+    render(<Graphin data={graphData} />);
+
+    const canvasWrapperElement = screen.getByTestId('custom-element');
+    const graphinContainerElement = screen.getByTestId('graphin-container');
+    const canvasElement = document.querySelector('[data-testid="graphin-container"] canvas');
+
+    expect(canvasWrapperElement).toBeInTheDocument();
+    expect(graphinContainerElement).toBeInTheDocument();
+    expect(canvasElement).toBeInTheDocument();
+  });
 });
