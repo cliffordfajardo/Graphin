@@ -408,6 +408,7 @@ class Graphin extends React.PureComponent<GraphinProps, GraphinState> {
       );
       return;
     }
+
     /** 布局变化 */
     if (isLayoutChange) {
       if (this.isTree) {

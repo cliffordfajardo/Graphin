@@ -17,7 +17,7 @@ export interface GraphinContextType {
   theme: ThemeType;
   layout: LayoutController;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
+  [key: string]: any; // TODO: this shoudl be strict & explicit
 }
 
 const GraphinContext: React.Context<GraphinContextType> = React.createContext(defaultContext);

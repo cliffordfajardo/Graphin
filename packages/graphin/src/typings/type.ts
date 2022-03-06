@@ -177,10 +177,11 @@ export interface GraphinProps {
     // 自环边的类型
     loopEdgeType: string;
   }>;
-  /** user custom props */
-  [key: string]: any;
 
-  // children: React.ReactChildren;
+  /**
+   * TODO: revisitt, determine a way to make this more explicit.
+   */
+  [key: string]: any;
 }
 
 export interface IUserNode extends BaseNode, Partial<RestNode>, UserProperties {}
